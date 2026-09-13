@@ -2,6 +2,14 @@ object whisky {
 
     method rendimientoQueOtorga(cantidadDeDosis) = 0.9 ** cantidadDeDosis
 
+    var litros = 0
+
+    method cantidadDeLitros() = litros
+
+    method cambiarCantidadDeLitros(nuevaCantidad) {
+        litros = nuevaCantidad
+    }
+
 }
 
 object terere {
@@ -44,6 +52,22 @@ object aguaSaborizada {
     method rendimientoDeCualquierBebida(unaBebida,cantidadDeDosis) = unaBebida.rendimientoQueOtorga(cantidadDeDosis) * 250
 
     method rendimientoDeAgua(cantidadDeDosis) = agua.rendimientoQueOtorga(cantidadDeDosis)
+
+    // 10 cm3 = 0.01 L (esto seria agua con whisky)
+
+    // 7.5 cm3 = 0.0075 L (agua)
+    // 2.5 cm3 = 0.0025 L (whisky)
+
+    var unidad = 0
+
+    method unidad() = unidad 
+
+    method otorgarRendimiento() {
+        if( ( agua.cantidadDeLitros() + whisky.cantidadDeLitros() ) >= 0.01 ){
+            unidad = unidad + 1
+        }
+    }
+
 }
 
 object coctel {
@@ -56,6 +80,14 @@ object coctel {
 object agua {
 
     method rendimientoQueOtorga(cantidadDeDosis) = cantidadDeDosis * 0.75
+
+    var litros = 0
+
+    method cantidadDeLitros() = litros
+
+    method cambiarCantidadDeLitros(nuevaCantidad) {
+        litros = nuevaCantidad
+    }
 
 }
 
