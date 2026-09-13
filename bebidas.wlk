@@ -70,9 +70,23 @@ object aguaSaborizada {
 
 }
 
-object coctel {
+object coctel { // terminado
     //El rendimiento es el producto de los rendimientos de las bebidas que lo componen.
     //se refiere ha hacer una multiplicacion entre todos los rendimientos de todas las bebidas
+
+    var listaDeBebidas = [] //talves deberia poner un conjunto en ves de una lista
+
+    method listaDeBebidas() = listaDeBebidas
+
+    method agregarBebida(unaBebida) = listaDeBebidas.add(unaBebida)
+
+    //method tieneCianuro() = listaDeBebidas.contains(cianuro) //me falta integrarlo
+
+    method rendimientoQueOtorga(cantidadDeDosis) {
+        return listaDeBebidas
+        .map({ bebida => bebida.rendimientoQueOtorga(cantidadDeDosis) })
+        .fold(1, { totalAcumulado, rendimiento => totalAcumulado * rendimiento })
+    }
 }
 
 // bebida adicional
