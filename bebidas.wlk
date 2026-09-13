@@ -1,22 +1,24 @@
 object whisky {
 
-    method rendimientoQueOtorga(dosisConsumida) = 0.9 ** dosisConsumida
+    method rendimientoQueOtorga(cantidadDeDosis) = 0.9 ** cantidadDeDosis
 
 }
 
 object terere {
 
-    method rendimientoQueOtorga(dosisConsumida) = 1.max(0.1 * dosisConsumida)
+    method rendimientoQueOtorga(cantidadDeDosis) = 1.max(0.1 * cantidadDeDosis)
 
 }
 
 object cianuro {
 
-    method rendimientoQueOtorga(dosisConsumida) = 0
+    method rendimientoQueOtorga(cantidadDeDosis) = 0
 
 }
 
 //nuevas bebidas parte 2
+
+
 
 object licuadoDeFrutas {
 
@@ -37,3 +39,5 @@ object coctel {
     //El rendimiento es el producto de los rendimientos de las bebidas que lo componen.
     //se refiere ha hacer una multiplicacion entre todos los rendimientos de todas las bebidas
 }
+
+
