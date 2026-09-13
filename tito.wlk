@@ -24,11 +24,11 @@ object tito {
 
     var dosisActual = 0
 
-    //method dosis() = dosisActual
+    method dosis() = dosisActual
 
     var sustanciaActual = whisky
 
-    //method sustancia() = sustanciaActual
+    method sustancia() = sustanciaActual
 
     method rendimiento() = sustanciaActual.rendimientoQueOtorga(dosisActual)
 
