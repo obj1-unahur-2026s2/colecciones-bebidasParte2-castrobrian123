@@ -22,17 +22,28 @@ object cianuro {
 
 object licuadoDeFrutas {
 
-    var listaDeIngredientes = []
-    method listaDeIngredientes() = listaDeIngredientes
+    var listaDeNutrientes = []
 
-    method agregarIngredientes(unaLista) {
+    method listaDeNutrientes() = listaDeNutrientes
 
-    }
+    method agregarNutriente(unNutriente) = listaDeNutrientes.add(unNutriente)
+
+    method sumarNutrientes() = listaDeNutrientes.sum({i=>i.listaDeNutrientes()})
+
+    method rendimientoQueOtorga(cantidadDeDosis) = self.sumarNutrientes() / cantidadDeDosis
+
 }
 
 object aguaSaborizada {
+
     // los 3/4 (tres cuartos) son equivalente a 0.75 * algunaCantidadDeLitros
     // los 1/4 (un cuarto) son equivalentes a 250 * algunaCantidadDeLitros
+
+    method rendimientoQueOtorga(cantidadDeDosis) = self.agregarAgua(cantidadDeDosis) + self.agregarCualquierBebida(whisky,cantidadDeDosis)
+
+    method agregarCualquierBebida(unaBebida,cantidadDeDosis) = unaBebida.rendimientoQueOtorga(cantidadDeDosis) * 250
+
+    method agregarAgua(cantidadDeDosis) = agua.rendimientoQueOtorga(cantidadDeDosis)
 }
 
 object coctel {
@@ -40,4 +51,11 @@ object coctel {
     //se refiere ha hacer una multiplicacion entre todos los rendimientos de todas las bebidas
 }
 
+// bebida adicional
+
+object agua {
+
+    method rendimientoQueOtorga(cantidadDeDosis) = cantidadDeDosis * 0.75 // me falta la bebida ramdom
+
+}
 
