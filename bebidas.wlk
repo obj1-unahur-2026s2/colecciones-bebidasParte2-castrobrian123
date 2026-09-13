@@ -39,11 +39,11 @@ object aguaSaborizada {
     // los 3/4 (tres cuartos) son equivalente a 0.75 * algunaCantidadDeLitros
     // los 1/4 (un cuarto) son equivalentes a 250 * algunaCantidadDeLitros
 
-    method rendimientoQueOtorga(cantidadDeDosis) = self.agregarAgua(cantidadDeDosis) + self.agregarCualquierBebida(whisky,cantidadDeDosis)
+    method rendimientoQueOtorga(cantidadDeDosis) = self.rendimientoDeAgua(cantidadDeDosis) + self.rendimientoDeCualquierBebida(whisky,cantidadDeDosis)
 
-    method agregarCualquierBebida(unaBebida,cantidadDeDosis) = unaBebida.rendimientoQueOtorga(cantidadDeDosis) * 250
+    method rendimientoDeCualquierBebida(unaBebida,cantidadDeDosis) = unaBebida.rendimientoQueOtorga(cantidadDeDosis) * 250
 
-    method agregarAgua(cantidadDeDosis) = agua.rendimientoQueOtorga(cantidadDeDosis)
+    method rendimientoDeAgua(cantidadDeDosis) = agua.rendimientoQueOtorga(cantidadDeDosis)
 }
 
 object coctel {
@@ -55,7 +55,7 @@ object coctel {
 
 object agua {
 
-    method rendimientoQueOtorga(cantidadDeDosis) = cantidadDeDosis * 0.75 // me falta la bebida ramdom
+    method rendimientoQueOtorga(cantidadDeDosis) = cantidadDeDosis * 0.75
 
 }
 
